@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Listar;
+package LibreriaTipo;
 
 /**
  *
  * @author Alex Reinoso
  */
-public class Lista {
+public class Diccionario {
     
 }
