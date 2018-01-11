@@ -16,17 +16,33 @@ import java.util.List;
 public class Diccionario<T> 
 {
     private HashMap<Integer,T> elemento=new HashMap<Integer,T>();
-    private List<T> lista;
-
-   
+    
     public boolean agregaElemento(int K, T e)
     {
-        boolean band=false;
+        boolean band=true;
         if(e instanceof String)
         {
-            elemento.put(K, e);
-            band=true;
+            
+            band=false;
         }
+        
+        if(e instanceof Integer)
+        {
+            
+            band=false;
+        }
+        
+        if(e instanceof Double)
+        {
+            
+            band=false;
+        }
+        
+        if(band==true)
+        {
+            elemento.put(K, e);
+        }
+        
         else
         {
            System.out.println("Error de ingreso de datos"); 
@@ -49,33 +65,26 @@ public class Diccionario<T>
         return  e;
     }
     
-    public List<T> recuperarElementos()
+    public Object[] recuperarElementos()
     {
-        lista=null;
+        Object[]lista=null;
         
-        Iterator it = elemento.keySet().iterator();
-        
-        while(it.hasNext())
-        {
-            Integer key = (Integer) it.next();
-            lista.add(elemento.get(key));
-        }
-        
-        if(lista==null)
-        {
-            System.out.println("La lista esta vacia");  
-        }
+       lista=elemento.values().toArray();
+       
+       if(lista==null)
+       {
+           System.out.println("La lista esta vacia");  
+       }
         
         return lista;
     }
     
     public boolean eliminarElemento(int K)
     {
-        boolean band=false;
+        boolean band;
         elemento.remove(K);
         band=true;
         
         return band;
     }
-    
 }
