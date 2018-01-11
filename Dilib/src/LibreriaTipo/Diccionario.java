@@ -22,7 +22,7 @@ public class Diccionario<T>
     public boolean agregaElemento(int K, T e)
     {
         boolean band=false;
-        if(e instanceof Propietario)
+        if(e instanceof String)
         {
             elemento.put(K, e);
             band=true;
